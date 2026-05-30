@@ -75,6 +75,7 @@ function MainApp() {
         <Routes>
           <Route element={<DashboardLayout />}>
             <Route path="/" element={<MainPage />} />
+            <Route path="/ClueMe" element={<MainPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
