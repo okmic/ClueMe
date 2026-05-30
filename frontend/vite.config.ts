@@ -14,4 +14,9 @@ export default defineConfig({
       },
     },
   },
+  base: '/ClueMe/',
+  build: {
+    outDir: './build',
+    emptyOutDir: true
+  }
 })
