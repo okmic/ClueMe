@@ -1,0 +1,38 @@
+services:
+  backend:
+    build: ./backend
+    container_name: clue-me-backend
+    environment:
+      MODE: docker
+      GATWAY_URI: http://localhost:9999
+      GATWAY_PORT: 9999
+      NODE_ENV: development
+      PORT: 9999
+    ports:
+      - "9999:9999"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    networks:
+      - clue-me-network
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: clue-me-frontend
+    environment:
+      NODE_ENV: development
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - clue-me-network
+    restart: unless-stopped
+
+networks:
+  clue-me-network:
+    driver: bridge

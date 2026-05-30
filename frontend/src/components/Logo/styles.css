@@ -1,0 +1,50 @@
+.clue-page-left {
+    animation: cluePageLeft 0.8s ease-out forwards;
+    transform-origin: 24px 26px;
+}
+
+.clue-page-right {
+    animation: cluePageRight 0.8s ease-out 0.15s forwards;
+    transform-origin: 24px 26px;
+    opacity: 0;
+}
+
+.clue-accent-line {
+    animation: clueAccentGlow 2s ease-in-out 0.8s infinite;
+}
+
+@keyframes cluePageLeft {
+    0% {
+        d: path('M24 26L24 26L24 26L24 26Z');
+        opacity: 0;
+    }
+
+    100% {
+        d: path('M24 10L8 6V38L24 42V10Z');
+        opacity: 0.9;
+    }
+}
+
+@keyframes cluePageRight {
+    0% {
+        d: path('M24 26L24 26L24 26L24 26Z');
+        opacity: 0;
+    }
+
+    100% {
+        d: path('M24 10L40 6V38L24 42V10Z');
+        opacity: 0.7;
+    }
+}
+
+@keyframes clueAccentGlow {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
